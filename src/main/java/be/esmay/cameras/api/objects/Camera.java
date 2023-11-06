@@ -1,6 +1,7 @@
 package be.esmay.cameras.api.objects;
 
 import be.esmay.cameras.CamerasPlugin;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.entity.ArmorStand;
@@ -56,9 +57,10 @@ public final class Camera {
         Player player = (Player) result.getHitEntity();
 
         if (player.getUniqueId().equals(this.owner)) return;
-        if (this.members.contains(player.getUniqueId())) return; // Should probably add settings :D
+        if (this.members.contains(player.getUniqueId())) return; // Should probably add settings :
 
-
+        Player owner = Bukkit.getPlayer(this.owner);
+        if (owner == null || !owner.isOnline()) return;
     }
 
 }
