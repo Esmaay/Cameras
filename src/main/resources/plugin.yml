@@ -1,0 +1,4 @@
+name: Cameras
+version: '${project.version}'
+main: be.esmay.cameras.CamerasPlugin
+api-version: '1.20'
